@@ -23,7 +23,6 @@ export class PandaListComponent implements OnInit {
    }
 
    onFilterTermChange(filterTerm: string): void {
-      console.log(this.filterTerm);
       this.filterTerm = filterTerm;
       if (filterTerm) {
          this.filteredPandas = this.pandas.filter((panda) =>
