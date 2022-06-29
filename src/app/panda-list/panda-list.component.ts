@@ -27,7 +27,7 @@ export class PandaListComponent implements OnInit {
       this.filterTerm = filterTerm;
       if (filterTerm) {
          this.filteredPandas = this.pandas.filter((panda) =>
-            panda.name.includes(filterTerm)
+            panda.name.toLowerCase().includes(filterTerm.toLowerCase())
          );
       } else {
          this.filteredPandas = this.pandas;
