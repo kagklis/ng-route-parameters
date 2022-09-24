@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Panda } from '../interfaces/panda';
 import { PandaService } from '../services/panda.service';
 
@@ -17,9 +17,11 @@ export class PandaListComponent implements OnInit {
    }
 
    ngOnInit(): void {
-      this.filterTerm =
-         this.route.snapshot.queryParamMap.get('filterTerm') ?? '';
-      this.onFilterTermChange(this.filterTerm);
+      // this.filterTerm = this.route.snapshot.queryParamMap.get('filterTerm') ?? '';
+      this.route.queryParamMap.subscribe((paramMap: ParamMap) => {
+         this.filterTerm = paramMap.get('filterTerm') ?? '';
+         this.onFilterTermChange(this.filterTerm);
+      });
    }
 
    onFilterTermChange(filterTerm: string): void {
