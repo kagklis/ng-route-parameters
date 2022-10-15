@@ -25,27 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-   imports: [
-      RouterModule.forRoot([
-         {
-            path: '',
-            redirectTo: 'home',
-            pathMatch: 'full',
-         },
-         {
-            path: 'home',
-            component: HomeComponent,
-         },
-         {
-            path: 'pandas',
-            component: PandaListComponent,
-         },
-         {
-            path: 'pandas/:id',
-            component: PandaDisplayComponent,
-         },
-      ]),
-   ],
+   imports: [RouterModule.forRoot(routes)],
    exports: [RouterModule],
 })
 export class AppRoutingModule {}
