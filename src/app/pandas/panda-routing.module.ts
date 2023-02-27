@@ -6,15 +6,10 @@ import { PandaListComponent } from './panda-list/panda-list.component';
 const routes: Routes = [
    {
       path: '',
-      redirectTo: 'pandas',
-      pathMatch: 'full',
-   },
-   {
-      path: 'pandas',
       component: PandaListComponent,
    },
    {
-      path: 'pandas/:id',
+      path: ':id',
       component: PandaDisplayComponent,
    },
 ];
