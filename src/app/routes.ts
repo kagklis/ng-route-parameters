@@ -1,7 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { PandaDisplayComponent } from './panda-display/panda-display.component';
-import { PandaListComponent } from './panda-list/panda-list.component';
 
 export const APP_ROUTES: Routes = [
    {
@@ -11,14 +8,14 @@ export const APP_ROUTES: Routes = [
    },
    {
       path: 'home',
-      component: HomeComponent,
+      loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
    },
    {
       path: 'pandas',
-      component: PandaListComponent,
+      loadComponent: () => import('./panda-list/panda-list.component').then(m => m.PandaListComponent)
    },
    {
       path: 'pandas/:id',
-      component: PandaDisplayComponent,
+      loadComponent: () => import('./panda-display/panda-display.component').then(m => m.PandaDisplayComponent)
    },
 ];
