@@ -1,5 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import {
+   ActivatedRoute,
+   ParamMap,
+   Router,
+   RouterModule,
+} from '@angular/router';
 import { map } from 'rxjs';
 import { Panda } from '../interfaces/panda';
 import { PandaService } from '../services/panda.service';
@@ -7,6 +13,8 @@ import { PandaService } from '../services/panda.service';
 @Component({
    templateUrl: './panda-display.component.html',
    styleUrls: ['./panda-display.component.scss'],
+   standalone: true,
+   imports: [CommonModule, RouterModule],
 })
 export class PandaDisplayComponent implements OnInit {
    panda?: Panda;

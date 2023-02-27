@@ -1,11 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, ParamMap, RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Panda } from '../interfaces/panda';
 import { PandaService } from '../services/panda.service';
 
 @Component({
    templateUrl: './panda-list.component.html',
    styleUrls: ['./panda-list.component.scss'],
+   standalone: true,
+   imports: [CommonModule, FormsModule, RouterModule, NgbModule],
 })
 export class PandaListComponent implements OnInit {
    public filterTerm: string = '';
