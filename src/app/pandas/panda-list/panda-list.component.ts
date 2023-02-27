@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Panda } from '../interfaces/panda';
-import { PandaService } from '../services/panda.service';
+import { Panda } from '../../interfaces/panda';
+import { PandaService } from '../../services/panda.service';
 
 @Component({
    templateUrl: './panda-list.component.html',
