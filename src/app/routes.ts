@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { PandaService } from './services/panda.service';
 
 export const APP_ROUTES: Routes = [
    {
@@ -8,14 +9,12 @@ export const APP_ROUTES: Routes = [
    },
    {
       path: 'home',
-      loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
+      loadComponent: () =>
+         import('./home/home.component').then((m) => m.HomeComponent)
    },
    {
       path: 'pandas',
-      loadComponent: () => import('./panda-list/panda-list.component').then(m => m.PandaListComponent)
-   },
-   {
-      path: 'pandas/:id',
-      loadComponent: () => import('./panda-display/panda-display.component').then(m => m.PandaDisplayComponent)
+      providers: [PandaService],
+      loadChildren: () => import('./pandas').then((m) => m.PANDA_ROUTES)
    },
 ];

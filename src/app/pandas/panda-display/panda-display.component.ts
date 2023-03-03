@@ -1,14 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {
-   ActivatedRoute,
-   ParamMap,
-   Router,
-   RouterModule,
-} from '@angular/router';
 import { map } from 'rxjs';
 import { Panda } from '../interfaces/panda';
-import { PandaService } from '../services/panda.service';
+import { PandaService } from '../../services/panda.service';
+
+import { CommonModule } from '@angular/common';
+import { RouterModule, ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
    templateUrl: './panda-display.component.html',

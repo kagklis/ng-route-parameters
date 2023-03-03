@@ -1,9 +1,6 @@
 import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import {
-   provideRouter,
-   withDebugTracing,
-} from '@angular/router';
+import { provideRouter, withDebugTracing } from '@angular/router';
 import { AppComponent } from './app/app.component';
 
 import { APP_ROUTES } from './app/routes';
@@ -14,8 +11,5 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-   providers: provideRouter(
-      APP_ROUTES,
-      withDebugTracing()
-   ),
+   providers: [provideRouter(APP_ROUTES, withDebugTracing())],
 });

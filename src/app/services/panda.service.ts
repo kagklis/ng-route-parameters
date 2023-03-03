@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Panda } from '../interfaces/panda';
+import { Panda } from '../pandas';
 
 @Injectable({
    providedIn: 'root',
